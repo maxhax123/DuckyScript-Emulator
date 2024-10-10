@@ -1,0 +1,15 @@
+
+    GUI r
+    DELAY 200
+    STRINGLN powershell
+    DELAY 300
+    REM the powershell version uses Speech Synthesis Markup Language so the speech can emphasis some words a change pitch for the duck
+    STRINGLN Add-Type -AssemblyName System.speech;(New-Object System.Speech.Synthesis.SpeechSynthesizer).SpeakSsml('<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">A duck walked up to a lemonade stand<break time="0.5s"/>And he said to the man, running the stand<break time="0.5s"/><prosody rate="fast"><emphasis>Hey!</emphasis></prosody><prosody pitch="x-low">Bum bum bum</prosody><break time="0.5s"/><prosody rate="fast"><emphasis>Got any grapes?</emphasis></prosody>The man said<break time="0.5s"/>No we just sell lemonade. But it''s cold. And it''s fresh. And it''s all home-made. Can I get you a <emphasis>Glass?</emphasis><break time="0.5s"/>The duck said<break time="0.5s"/><prosody rate="fast">I''ll <emphasis>pass!</emphasis></prosody>Then he waddled away<prosody pitch="x-low">waddle waddle</prosody><break time="0.2s"/>Til the very next day<prosody pitch="x-low">Bum bum bum<break time="0.2s"/>bum bum bumbum</prosody></speak>')
+ELSE IF ($_OS == MACOS)
+    COMMAND SPACE
+    DELAY 100
+    STRINGLN terminal
+    DELAY 100
+    STRING say
+    SPACE
+    STRINGLN A duck walked up to a lemonade stand and he said to the man, running the stand. Hey! Bum bum bum. Got any grapes? The man said No we just sell lemonade. But it's cold. And it's fresh. And it's all home-made. Can I get you a Glass? The duck said I'll pass! Then he waddled away. waddle waddle. Til the very next day. Bum bum bum bum bum bumbum
